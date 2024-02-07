@@ -17,7 +17,7 @@ import { useNavigation } from '@react-navigation/native';
   import Evaluacion from "../components/evaluacion/Evaluacion";
 
 
-const perfil = ({navigation}) =>{
+const perfil = () =>{
  
     const [calificacion, setCalificacion] = useState(0);
   
@@ -28,9 +28,7 @@ const perfil = ({navigation}) =>{
       setCalificacion(valor);
      }
     }
-    const handlePress2 = () =>{
-      navigation.navigate('Home');
-    }
+    
 
     
     return (
@@ -58,7 +56,7 @@ const perfil = ({navigation}) =>{
              
              <Text style={styles.seccionmargentop}> Otros </Text>
              <Text style={styles.seccionmargen}>Soy del campus de comayagua en la universidad ujcv y espero graduarme de la carrera de infotecnologia</Text>
-             <Button  title='inicio' onPress={handlePress2}/>
+            
           </ScrollView>
         </SafeAreaView>
       );

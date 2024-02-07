@@ -1,21 +1,21 @@
 import  React, {useState}  from "react";
 import type {PropsWithChildren} from 'react';
 import {
-  SafeAreaView,
-  ScrollView,
-  StatusBar,
-  StyleSheet,
-  Text,
-  useColorScheme,
-  View,
   Image,
-  Button
+    SafeAreaView,
+    ScrollView,
+    StatusBar,
+    StyleSheet,
+    Button,
+    Text,
+    useColorScheme,
+    View,
 } from 'react-native';
 import Perfil from "./Perfil";
 import { useNavigation } from "@react-navigation/native";
 import Evaluacion from '../components/evaluacion/Evaluacion';
 
-const inicio = () => {
+const inicio = ({navigation}) => {
 
   const [calificacion, setCalificacion] = useState(0);
 
@@ -26,8 +26,13 @@ const inicio = () => {
     setCalificacion(valor);
    }
   }
+
   
-    
+  
+  const handlepress2 = ()=>{
+    navigation.navigate('David');
+ };
+
   
     
     return (
@@ -54,6 +59,10 @@ const inicio = () => {
      
      <Text style={styles.seccionmargentopp}> Otros </Text>
      <Text style={styles.seccionmargenp}> Phil Spencer es un ejecutivo de la industria de los videojuegos y actualmente se desempeña como el jefe de Xbox en Microsoft. Asumió este rol en 2014 y ha sido un líder clave en la estrategia y el desarrollo de la marca Xbox.</Text>
+     <Button 
+                    title='Mi perfil'
+                    onPress={handlepress2}
+                />
     </ScrollView>
   </SafeAreaView>
   </View>
@@ -134,14 +143,14 @@ contenedor:{
 },
 
 container2:{
-  flex: 1, 
-  justifyContent: 'center',
-  alignItems: 'center',
-  margin: 5,
-  borderWidth: 2,
-  borderColor: 'black',
-  backgroundColor: 'white',  
-},
+      flex: 1, 
+      justifyContent: 'center',
+      alignItems: 'center',
+      margin: 5,
+      borderWidth: 2,
+      borderColor: 'black',
+      backgroundColor: 'white',  
+    },
 
 encabezado:{
     fontSize: 30,
